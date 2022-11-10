@@ -8,7 +8,7 @@ public class task003 {
     public static void main(String[] args) {
         int [] exampleArray = {91,2,43,4,5,132,4,3,23,13,4,35,1,24,1,2,324,5,3};
         System.out.println(Arrays.toString(exampleArray));
-        System.out.println(Arrays.toString(sortArray(exampleArray)));
+        System.out.println(Arrays.toString(SortArray(exampleArray)));
         
         Integer[] someNumbers = { 1, 2, 3, 4, 5, 2, 1, 3, 24, 543, 5, 345, 23, 52, 45, 23, 42, 34, 234, 23 };
         System.out.println(Arrays.toString(someNumbers));
@@ -21,15 +21,15 @@ public class task003 {
         System.out.println("Average " + Average(integerList));
     }
 
-    public static int[] sortArray(int[] someArray) {
+    public static int[] SortArray(int[] someArray) {
         if (someArray.length == 0 || someArray.length == 1) {
             return someArray;
         }
         int[] leftArray = Arrays.copyOfRange(someArray, 0, someArray.length / 2);
         int[] rightArray = Arrays.copyOfRange(someArray, someArray.length / 2, someArray.length);
 
-        leftArray = sortArray(leftArray);
-        rightArray = sortArray(rightArray);
+        leftArray = SortArray(leftArray);
+        rightArray = SortArray(rightArray);
 
     
         return MergeTwoArrays(leftArray, rightArray);
